@@ -234,15 +234,15 @@ def _do_train(corrections: list, auto_samples: list):
         pickle.dump(model_data, f, protocol=4)
 
     acc = (ensemble.predict(X_arr) == y_enc).mean() * 100
-    print(f"[auto_trainer] ✅ Model saved! Classes: {unique_classes} | Train acc: {acc:.1f}%")
-    print(f"[auto_trainer] 🔄 classifier.py will auto-reload on next request")
+    print(f"[auto_trainer] Model saved! Classes: {unique_classes} | Train acc: {acc:.1f}%")
+    print(f"[auto_trainer] classifier.py will auto-reload on next request")
 
 
 # ── Watcher loop ──────────────────────────────────────────────────────────────
 def _watch_loop():
     global _last_known_count, _is_training
 
-    print(f"[auto_trainer] 👀 Watching Firebase every {CHECK_INTERVAL}s for new corrections...")
+    print(f"[auto_trainer] Watching Firebase every {CHECK_INTERVAL}s for new corrections...")
 
     while True:
         try:
