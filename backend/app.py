@@ -131,9 +131,9 @@ def health():
 
 if __name__ == "__main__":
     auto_trainer.start()
-    print("🌸 Flower API        → http://localhost:5000")
-    print("🤖 Auto-trainer      → watching Firebase every 30s")
-    print("⚡ Instant retrain   → POST /retrain (called by frontend)")
-    print("📊 Training status   → http://localhost:5000/training-status")
-    print("🗂️  Categories        → http://localhost:5000/flower-categories")
+    print("Flower API        → http://localhost:5000")
+    print("Auto-trainer      → watching Firebase every 30s")
+    print("Instant retrain   → POST /retrain (called by frontend)")
+    print("Training status   → http://localhost:5000/training-status")
+    print("Categories        → http://localhost:5000/flower-categories")
     app.run(host="0.0.0.0", port=5000, debug=False)

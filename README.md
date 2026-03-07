@@ -1,4 +1,4 @@
-# 🌸 Flower Vision — cv2 BBox Classifier
+# Flower Vision — cv2 BBox Classifier
 
 ## Architecture
 ```

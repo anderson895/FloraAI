@@ -272,7 +272,7 @@ def _load_custom_profiles():
                 continue
             profile = _build_profile_from_images(imgs)
             new_custom[label] = profile
-            print(f"[classifier] 🌸 Custom profile built: '{label}' "
+            print(f"[classifier] Custom profile built: '{label}' "
                   f"(H={profile['dominant_hue']}, n={profile['_sample_count']})")
 
         _custom_profiles = new_custom
@@ -364,7 +364,7 @@ def _load_model():
             with open(MODEL_PATH,"rb") as f:
                 _model_cache = pickle.load(f)
             _model_mtime = mtime
-            print(f"[classifier] ✅ ML model — {len(_model_cache['label_encoder'].classes_)} classes")
+            print(f"[classifier]   ML model — {len(_model_cache['label_encoder'].classes_)} classes")
         return _model_cache
     except Exception as e:
         print(f"[classifier] ❌ Model load error: {e}")
@@ -589,10 +589,10 @@ def classify_image(img_bytes:bytes) -> dict:
     use_ml     = len(ml_preds)>0
 
     if override:
-        model_label = f"✅ Correction cache ({len(_correction_cache.get(override[0],[]))} samples)"
+        model_label = f" Correction cache ({len(_correction_cache.get(override[0],[]))} samples)"
     elif use_ml:
         model_label = f"ML — SVM+RF ({len(ml_preds)} classes)"
-        print(f"[classify] ✅ ML → {ml_preds[0][0]} ({ml_preds[0][1]*100:.1f}%)")
+        print(f"[classify] ML → {ml_preds[0][0]} ({ml_preds[0][1]*100:.1f}%)")
     else:
         n_custom = len(_custom_profiles)
         model_label = f"Rule-based HSV ({len(BUILT_IN_PROFILES)} built-in + {n_custom} custom profiles)"
