@@ -80,7 +80,7 @@ const db = getFirestore(firebaseApp);
 // ── Constants ─────────────────────────────────────────────────────────────────
 const CLOUD_NAME    = "di3lbgjne";
 const UPLOAD_PRESET = "plantclass";
-const API_URL       = "http://localhost:5000";
+const API_URL       = "https://floraai-8f8u.onrender.com";
 
 // ── API helpers ───────────────────────────────────────────────────────────────
 async function uploadToCloudinary(file: File): Promise<string> {
